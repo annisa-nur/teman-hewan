@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import { Link } from "react-router-dom";
+import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 export default class Footer extends Component {
 
     render() {
@@ -36,20 +37,19 @@ export default class Footer extends Component {
                     <div className="footer-col">
                       <h4>Follow us on</h4>
                       <div class="social-media">
-                        <a href="#"><i className="fab fa-facebook"></i></a>
-                        <a href="#"><i className="fab fa-instagram"></i></a>
-                        <a href="#"><i className="fab fa-twitter"></i></a>
-                        <a href="#"><i className="fab fa-youtube"></i></a>
+                        <a href="https://facebook.com"><FaFacebook/></a>
+                        <a href="https://instagram.com"><FaInstagram/></a>
+                        <a href="https://twitter.com"><FaTwitter/></a>
+                        <a href="https://youtube.com"><FaYoutube/></a>
                       </div>
                     </div>
                   </div>
                 </div>
+                <br></br>
                 <div className="fixed-footer">
                   <div className="container">Copyright&copy; 2023 Teman Hewan</div>
                 </div>
             </section>
-
-
         )
     }
 }
