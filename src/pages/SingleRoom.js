@@ -3,9 +3,9 @@ import { Component } from "react";
 import defaultBcg from "../images/room-1.jpeg";
 import Hero from "../components/Hero";
 import Banner from "../components/Banner";
-import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 import { RoomContext } from "../context";
+import Footer from "../components/Footer";
 
 import StyledHero from "../components/StyledHero";
 export default class SingleRoom extends Component {
@@ -31,7 +31,7 @@ export default class SingleRoom extends Component {
         <div className="error">
           <h3> no such room could be found...</h3>
           <Link to="/rooms" className="btn-primary">
-            back to rooms
+            back to pets
           </Link>
         </div>
       );
@@ -55,7 +55,7 @@ export default class SingleRoom extends Component {
         <StyledHero img={images[0] || this.state.defaultBcg}>
           <Banner title={`${name} room`}>
             <Link to="/rooms" className="btn-primary">
-              back to rooms
+              back to pets
             </Link>
           </Banner>
         </StyledHero>
