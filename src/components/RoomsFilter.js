@@ -17,16 +17,13 @@ const RoomsFilter = ({ rooms }) => {
     price,
     minPrice,
     maxPrice,
-    minSize,
-    maxSize,
     breakfast,
-    pets
   } = context;
 
   // get unique types
   let types = getUnique(rooms, "type");
   // add all
-  types = ["all", ...types];
+  types = ["All", ...types];
   // map to jsx
   types = types.map((item, index) => (
     <option key={index} value={item}>
@@ -42,11 +39,11 @@ const RoomsFilter = ({ rooms }) => {
   ));
   return (
     <section className="filter-container">
-      <Title title="search rooms" />
+      <Title title="search pets" />
       <form className="filter-form">
         {/* select type */}
         <div className="form-group">
-          <label htmlFor="type">room type</label>
+          <label htmlFor="type">pet type</label>
           <select
             name="type"
             id="type"
@@ -60,7 +57,7 @@ const RoomsFilter = ({ rooms }) => {
         {/* end of select type */}
         {/* guests  */}
         <div className="form-group">
-          <label htmlFor="capacity">Guests</label>
+          <label htmlFor="capacity">Gender</label>
           <select
             name="capacity"
             id="capacity"
@@ -74,7 +71,7 @@ const RoomsFilter = ({ rooms }) => {
         {/* end of guests */}
         {/* room price */}
         <div className="form-group">
-          <label htmlFor="price">room price ${price}</label>
+          <label htmlFor="price">pet price Rp{price}</label>
           <input
             type="range"
             name="price"
@@ -87,27 +84,6 @@ const RoomsFilter = ({ rooms }) => {
           />
         </div>
         {/* end of room price*/}
-        {/* size */}
-        <div className="form-group">
-          <label htmlFor="price">room size </label>
-          <div className="size-inputs">
-            <input
-              type="number"
-              name="minSize"
-              value={minSize}
-              onChange={handleChange}
-              className="size-input"
-            />
-            <input
-              type="number"
-              name="maxSize"
-              value={maxSize}
-              onChange={handleChange}
-              className="size-input"
-            />
-          </div>
-        </div>
-        {/* end of select type */}
         {/* extras */}
         <div className="form-group">
           <div className="single-extra">
@@ -118,16 +94,7 @@ const RoomsFilter = ({ rooms }) => {
               checked={breakfast}
               onChange={handleChange}
             />
-            <label htmlFor="breakfast">breakfast</label>
-          </div>
-          <div className="single-extra">
-            <input
-              type="checkbox"
-              name="pets"
-              checked={pets}
-              onChange={handleChange}
-            />
-            <label htmlFor="breakfast">pets</label>
+            <label htmlFor="breakfast">Vaccine</label>
           </div>
         </div>
         {/* end of extras type */}

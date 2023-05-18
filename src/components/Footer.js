@@ -50,6 +50,8 @@ export default class Footer extends Component {
                   <div className="container">Copyright&copy; 2023 Teman Hewan</div>
                 </div>
             </section>
+
+
         )
     }
 }
