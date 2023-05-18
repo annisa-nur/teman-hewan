@@ -7,6 +7,7 @@ import SingleRoom from "./pages/SingleRoom";
 import Error from "./pages/Error";
 import Payment from "./pages/Payment";
 
+
 import Navbar from "./components/Navbar";
 
 import { Routes, Route } from "react-router-dom";
