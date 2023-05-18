@@ -23,10 +23,11 @@ function Signup() {
     }
     return (
         <body>
-            <center><img src="images/Logo.png" class="logo"/></center>
+            <center><img src="/Logo.png" class="logo"/></center>
             <div>
-                <img src="images/dogreal.png" class="dog"/>
-                <img src="images/catreal.png" class="cat"/>
+                <img src="/rumput.png" class="rumput"/>
+                <img src="/dogreal.png" class="dog"/>
+                <img src="/catreal.png" class="cat"/>
             </div>
             <div>
                 <div class="regis">
@@ -70,6 +71,7 @@ function Signup() {
                         <br></br>
                         <br></br>
                         <br></br>
+                        
                         <Link to= '/login' className='btn btn-default border'>Register</Link>
                         <br></br>
                         <br></br>
