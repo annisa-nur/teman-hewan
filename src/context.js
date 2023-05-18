@@ -27,7 +27,7 @@ export default class RoomProvider extends Component {
   // getData = async () => {
   //   try {
   //     let response = await Client.getEntries({
-  //       content_type: "xxx",
+  //       content_type: "hotelBookingRoom",
   //       //order: "sys.createdAt"
   //       //order: 'field.price'
   //       //order: '-field.price' <-- reversed order
