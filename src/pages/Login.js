@@ -21,10 +21,9 @@ function Login() {
 
     return (
         <body>
-            <center><img src="images/Logo.png" class="logo"/></center>
             <div>
-                <img src="images/dog.png" class="dog"/>
-                <img src="/cat.png" class="cat"/>
+            <center><img src="/Logo.png" class="logologin"/></center>
+                <img src="/background.png" class="background"/>
             </div>
         <div>
             <div class="login">
@@ -46,7 +45,7 @@ function Login() {
                     <br></br>
                     <br></br>
                     <center><a href="" type='submit' class="btn">Log In</a></center>
-                    <p class="footer">Or if you don't have an account</p>
+                    <p class="sentence">Or if you don't have an account</p>
                     <Link to= '/signup' class="create">Create an Account</Link>
                 </form></center>
             </div>
@@ -57,3 +56,4 @@ function Login() {
 }
 
 export default Login
+
