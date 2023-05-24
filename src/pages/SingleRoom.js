@@ -13,7 +13,7 @@ export default class SingleRoom extends Component {
     super(props);
     console.log(this.props);
     this.state = {
-      slug: props.match?.params?.slug, // add a check for existence of props.match
+      slug: this.props.match?.params?.slug, // add a check for existence of props.match
       defaultBcg: defaultBcg
     };
   }
@@ -39,12 +39,11 @@ export default class SingleRoom extends Component {
     const {
       name,
       description,
-      capacity,
-      size,
+      gender,
       price,
       extras,
-      breakfast,
-      pets,
+      vaccine,
+      steril,
       images
     } = room;
     const [main, ...defaultImages] = images;
@@ -53,7 +52,7 @@ export default class SingleRoom extends Component {
     return (
       <>
         <StyledHero img={images[0] || this.state.defaultBcg}>
-          <Banner title={`${name} room`}>
+          <Banner title={`Hi, my name is ${name}!`}>
             <Link to="/rooms" className="btn-primary">
               back to pets
             </Link>
@@ -73,13 +72,9 @@ export default class SingleRoom extends Component {
             <article className="info">
               <h3>info</h3>
               <h6>price : Rp{price}</h6>
-              <h6>size : {size} SQFT</h6>
-              <h6>
-                max capacity :
-                {capacity > 1 ? `${capacity} people` : `${capacity} person`}
-              </h6>
-              <h6>{pets ? "pets allowed" : "no pets allowed"}</h6>
-              <h6>{breakfast && "free breakfast included"}</h6>
+              <h6>gender : {gender}</h6>
+              <h6>{vaccine ? "pet vaccinated 100%" : "pet is not vaccinated"}</h6>
+              <h6>{steril ? "pet sterilized" : "pet is not sterilized"}</h6>
             </article>
           </div>
         </section>
