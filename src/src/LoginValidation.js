@@ -13,7 +13,7 @@ function validation (values) {
         error.password = "Password Should Be Filled"
     }
     else if(!password_pattern.test(values.password)){
-        error.password = "Incorrect Password"
+        error.password = "Incorrect Password" 
     }
     else{
         error.password = ""

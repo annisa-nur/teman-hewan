@@ -27,11 +27,11 @@ function validation (values) {
         error.name = ""
     }
 /***********************************/
-    if(values.date === "") {
-        error.date = "Birth Datex Should Be Filled"
+    if(values.bday === "") {
+        error.bday = "Birth Date Should Be Filled"
     }
     else{
-        error.date = ""
+        error.bday = ""
     }
 /***********************************/
     if(values.address === "") {
