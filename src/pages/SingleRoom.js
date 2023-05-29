@@ -1,58 +1,44 @@
-import React from "react";
-import { Component } from "react";
+import React, { useContext } from "react";
 import defaultBcg from "../images/room-1.jpg";
 import Hero from "../components/Hero";
 import Banner from "../components/Banner";
 import Footer from "../components/Footer";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { RoomContext } from "../context";
-import Navbar from "../components/Navbar";
-
 import StyledHero from "../components/StyledHero";
-export default class SingleRoom extends Component {
-  constructor(props) {
-    super(props);
-    console.log(this.props);
-    this.state = {
-      slug: this.props.match?.params?.slug, // add a check for existence of props.match
-      defaultBcg: defaultBcg
-    };
+
+const SingleRoom = () => {
+  const { slug } = useParams();
+  const { getRoom } = useContext(RoomContext);
+  const room = getRoom(slug);
+  // const defaultBcg = defaultBcg; // replace with actual default background if needed
+
+  if (!room) {
+    return (
+      <div className="error">
+        <h3> no such pet could be found...</h3>
+        <Link to="/rooms" className="btn-primary">
+          back to pets
+        </Link>
+      </div>
+    );
   }
-  static contextType = RoomContext;
+  
+  const {
+    name,
+    description,
+    gender,
+    price,
+    extras,
+    vaccine,
+    steril,
+    images
+  } = room;
 
-  // componentDidMount() {
-  //   console.log(this.props);
-  // }
-  render() {
-    const { getRoom } = this.context;
-    const room = getRoom(this.state.slug);
-
-    if (!room) {
-      return (
-        <div className="error">
-          <h3> no such pet could be found...</h3>
-          <Link to="/rooms" className="btn-primary">
-            back to pets
-          </Link>
-        </div>
-      );
-    }
-    const {
-      name,
-      description,
-      gender,
-      price,
-      extras,
-      vaccine,
-      steril,
-      images
-    } = room;
-    const [main, ...defaultImages] = images;
-    console.log(defaultImages);
+  const [main, ...defaultImages] = images;
 
     return (
       <>
-      <Navbar />
         <StyledHero img={images[0] || this.state.defaultBcg}>
           <Banner title={`Hi, my name is ${name}!`}>
             <Link to="/rooms" className="btn-primary">
@@ -96,5 +82,7 @@ export default class SingleRoom extends Component {
         <Footer />
       </>
     );
-  }
 }
+
+export default SingleRoom;
+
