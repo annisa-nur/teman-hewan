@@ -6,6 +6,35 @@ body
     font-family: 'Winkle';  
     text-decoration: none;
 }  
+.background{
+    position: absolute;
+    width: 100%;
+    height: 785px;
+    left: 0px;
+    top: 0px;
+}
+.home-txt-box{
+    position: fixed;
+    display: inline;
+    background: transparent;
+    width: 50px;
+    text-align: center;
+    margin: 20px;
+}
+.home-txt{
+    position: sticky;
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+}
+.logologin{
+    max-width: 90px;
+    position: relative;
+    z-index: 1;
+    margin-top: 20px;
+    margin-left: 50%;
+    margin-bottom: 0;
+}
 .logo{
     max-width: 166px;
     position: static;
@@ -23,15 +52,15 @@ body
     margin-left: 1450px;
 }
 .login{  
-        width: 382px;  
-        overflow: hidden;  
-        margin: auto;
-        margin-top: 0px;
-        margin-bottom: 50px;
-        padding: 30px;  
-        background: rgba(91, 153, 90, 1);  
-        border-radius: 20px ;  
-        position:relative;
+    width: 382px;  
+    overflow: hidden;  
+    margin-left: 60%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 30px;  
+    background: rgba(91, 153, 90, 1);  
+    border-radius: 20px ;  
+    position:relative;
 }  
 .log{  
     text-align: center;
@@ -51,10 +80,10 @@ label{
     padding-top: 20px;
     padding-bottom: 20px;
     color: white;
-    font-size: 25px;
+    font-size: 15px;
 }
 #Uname{  
-    width: 370px;  
+    width: 300px;  
     height: 30px;  
     border: none;  
     border-radius: 3px;  
@@ -62,7 +91,7 @@ label{
     margin-top: 10px;
 }  
 #Pass{  
-    width: 370px;  
+    width: 300px;  
     height: 30px;  
     border: none;  
     border-radius: 3px;  
@@ -78,25 +107,37 @@ span{
     font-size: 40px;
     text-decoration: none;
     background-color: rgba(231, 182, 80, 1);
+    border: 3px solid rgba(231, 182, 80, 1);
     border-radius: 15px; 
     padding: 10px 80px; 
     text-align: center; 
     color: rgba(89, 44, 21, 1);
+    transition: all 0.3s linear;
 }  
+.btn:hover{
+    background: transparent;
+    color: rgba(231, 182, 80, 1);
+}
 .create{
     text-decoration: none;
     color: rgba(248, 241, 127, 1);
     font-size: 25px;
+    transition: all 0.3s linear;
 }
-.footer{
+.create:hover{
+    color: rgba(231, 182, 80, 1);
+}
+.ftr{
     font-family: 'Poppins';
     font-size: 15px;
     padding-top: 10px;
     color: white;
 }
+
 footer{
     width: 100%;
-    height: 90px;
+    height: 120px;
     background-color: rgba(130, 64, 38, 1);
-    margin: 0;
+    margin-top: 20px;
+    position: relative;
 }

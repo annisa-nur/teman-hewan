@@ -1,11 +1,12 @@
 import React from "react";
 import { Component } from "react";
-import defaultBcg from "../images/room-1.jpeg";
+import defaultBcg from "../images/room-1.jpg";
 import Hero from "../components/Hero";
 import Banner from "../components/Banner";
+import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 import { RoomContext } from "../context";
-import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 
 import StyledHero from "../components/StyledHero";
 export default class SingleRoom extends Component {
@@ -13,7 +14,7 @@ export default class SingleRoom extends Component {
     super(props);
     console.log(this.props);
     this.state = {
-      slug: props.match?.params?.slug, // add a check for existence of props.match
+      slug: this.props.match?.params?.slug, // add a check for existence of props.match
       defaultBcg: defaultBcg
     };
   }
@@ -29,7 +30,7 @@ export default class SingleRoom extends Component {
     if (!room) {
       return (
         <div className="error">
-          <h3> no such room could be found...</h3>
+          <h3> no such pet could be found...</h3>
           <Link to="/rooms" className="btn-primary">
             back to pets
           </Link>
@@ -39,12 +40,11 @@ export default class SingleRoom extends Component {
     const {
       name,
       description,
-      capacity,
-      size,
+      gender,
       price,
       extras,
-      breakfast,
-      pets,
+      vaccine,
+      steril,
       images
     } = room;
     const [main, ...defaultImages] = images;
@@ -52,8 +52,9 @@ export default class SingleRoom extends Component {
 
     return (
       <>
+      <Navbar />
         <StyledHero img={images[0] || this.state.defaultBcg}>
-          <Banner title={`${name} room`}>
+          <Banner title={`Hi, my name is ${name}!`}>
             <Link to="/rooms" className="btn-primary">
               back to pets
             </Link>
@@ -72,14 +73,10 @@ export default class SingleRoom extends Component {
             </article>
             <article className="info">
               <h3>info</h3>
-              <h6>price : ${price}</h6>
-              <h6>size : {size} SQFT</h6>
-              <h6>
-                max capacity :
-                {capacity > 1 ? `${capacity} people` : `${capacity} person`}
-              </h6>
-              <h6>{pets ? "pets allowed" : "no pets allowed"}</h6>
-              <h6>{breakfast && "free breakfast included"}</h6>
+              <h6>price : Rp{price}</h6>
+              <h6>gender : {gender}</h6>
+              <h6>{vaccine ? "pet vaccinated 100%" : "pet is not vaccinated"}</h6>
+              <h6>{steril ? "pet sterilized" : "pet is not sterilized"}</h6>
             </article>
           </div>
         </section>
@@ -90,6 +87,11 @@ export default class SingleRoom extends Component {
               <li key={index}>- {item}</li>
             ))}
           </ul>
+        </section>
+        <section className="adoptButton">
+          <Link to="/ApprovalForm" className="btn-primary">
+          Adopt Now!
+          </Link>
         </section>
         <Footer />
       </>

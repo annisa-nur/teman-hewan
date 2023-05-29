@@ -13,11 +13,12 @@ const RoomsFilter = ({ rooms }) => {
   const {
     handleChange,
     type,
-    capacity,
+    gender,
     price,
     minPrice,
     maxPrice,
-    breakfast,
+    vaccine,
+    steril
   } = context;
 
   // get unique types
@@ -30,20 +31,22 @@ const RoomsFilter = ({ rooms }) => {
       {item}
     </option>
   ));
-  // get unique capacity
-  let people = getUnique(rooms, "capacity");
+  // get unique gender
+  let people = getUnique(rooms, "gender");
+  people = ["All", ...people];
   people = people.map((item, index) => (
     <option key={index} value={item}>
       {item}
     </option>
   ));
+
   return (
     <section className="filter-container">
       <Title title="search pets" />
       <form className="filter-form">
         {/* select type */}
         <div className="form-group">
-          <label htmlFor="type">pet type</label>
+          <label htmlFor="type">PetType</label>
           <select
             name="type"
             id="type"
@@ -55,23 +58,23 @@ const RoomsFilter = ({ rooms }) => {
           </select>
         </div>
         {/* end of select type */}
-        {/* guests  */}
+        {/* gender  */}
         <div className="form-group">
-          <label htmlFor="capacity">Gender</label>
+          <label htmlFor="gender">gender</label>
           <select
-            name="capacity"
-            id="capacity"
+            name="gender"
+            id="gender"
             onChange={handleChange}
             className="form-control"
-            value={capacity}
+            value={gender}
           >
             {people}
           </select>
         </div>
-        {/* end of guests */}
-        {/* room price */}
+        {/* end of gender */}
+        {/* pet price */}
         <div className="form-group">
-          <label htmlFor="price">pet price Rp{price}</label>
+          <label htmlFor="price">PetPrice Rp{price}</label>
           <input
             type="range"
             name="price"
@@ -83,21 +86,33 @@ const RoomsFilter = ({ rooms }) => {
             className="form-control"
           />
         </div>
-        {/* end of room price*/}
-        {/* extras */}
+        {/* end pet price*/}
+        {/* vaccinated */}
         <div className="form-group">
           <div className="single-extra">
             <input
               type="checkbox"
-              name="breakfast"
-              id="breakfast"
-              checked={breakfast}
+              name="vaccine"
+              id="vaccine"
+              checked={vaccine}
               onChange={handleChange}
             />
-            <label htmlFor="breakfast">Vaccine</label>
+            <label htmlFor="vaccine">Vaccinated</label>
+          </div>
+          {/* end of vaccinated */}
+          {/* sterilled */}
+          <div className="single-extra">
+            <input
+              type="checkbox"
+              name="steril"
+              id="steril"
+              checked={steril}
+              onChange={handleChange}
+            />
+            <label htmlFor="steril">Sterilized</label>
           </div>
         </div>
-        {/* end of extras type */}
+        {/* end of sterilled */}
       </form>
     </section>
   );

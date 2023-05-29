@@ -13,14 +13,12 @@ export default class RoomProvider extends Component {
     loading: true,
     //
     type: "all",
-    capacity: 1,
+    gender: "all",
     price: 0,
     minPrice: 0,
     maxPrice: 0,
-    minSize: 0,
-    maxSize: 0,
-    breakfast: false,
-    pets: false
+    vaccine: false,
+    steril: false
   };
 
   // //getData
@@ -61,7 +59,6 @@ export default class RoomProvider extends Component {
     let featuredRooms = rooms.filter(room => room.featured === true);
       //
     let maxPrice = Math.max(...rooms.map(item => item.price));
-    let maxSize = Math.max(...rooms.map(item => item.size));
     this.setState({
       rooms,
       featuredRooms,
@@ -69,8 +66,7 @@ export default class RoomProvider extends Component {
       loading: false,
         //
       price: maxPrice,
-      maxPrice,
-      maxSize
+      maxPrice
     })
   };
 
@@ -84,9 +80,9 @@ export default class RoomProvider extends Component {
     });
     return tempItems;
   }
-  getRoom = slug => {
+  getRoom = slug  => {
     let tempRooms = [...this.state.rooms];
-    const room = tempRooms.find(room => room.slug);
+    const room = tempRooms.find(rooms => rooms.slug);
     return room;
   };
   handleChange = event => {
@@ -106,40 +102,33 @@ export default class RoomProvider extends Component {
     let {
       rooms,
       type,
-      capacity,
+      gender,
       price,
-      minSize,
-      maxSize,
-      breakfast,
-      pets
+      vaccine,
+      steril,
     } = this.state;
 
     let tempRooms = [...rooms];
     // transform values
-    // get capacity
-    capacity = parseInt(capacity);
     price = parseInt(price);
     // filter by type
     if (type !== "all") {
       tempRooms = tempRooms.filter(room => room.type === type);
     }
-    // filter by capacity
-    if (capacity !== 1) {
-      tempRooms = tempRooms.filter(room => room.capacity >= capacity);
+    // filter by gender
+    if (gender !== "all") {
+      tempRooms = tempRooms.filter(room => room.gender === gender);
     }
     // filter by price
     tempRooms = tempRooms.filter(room => room.price <= price);
-    //filter by size
-    tempRooms = tempRooms.filter(
-      room => room.size >= minSize && room.size <= maxSize
-    );
-    //filter by breakfast
-    if (breakfast) {
-      tempRooms = tempRooms.filter(room => room.breakfast === true);
+
+    //filter by vaccine
+    if (vaccine) {
+      tempRooms = tempRooms.filter(room => room.vaccine === true);
     }
-    //filter by pets
-    if (pets) {
-      tempRooms = tempRooms.filter(room => room.pets === true);
+    //filter by steril
+    if (steril) {
+      tempRooms = tempRooms.filter(room => room.steril === true);
     }
     this.setState({
       sortedRooms: tempRooms

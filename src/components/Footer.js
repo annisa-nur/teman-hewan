@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import { Link } from "react-router-dom";
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 export default class Footer extends Component {
 
@@ -21,8 +20,8 @@ export default class Footer extends Component {
                     <div className="footer-col">
                       <h4>Adoption</h4>
                       <ul>
-                        <li><a href="#">Kucing</a></li>
-                        <li><a href="#">Anjing</a></li>
+                        <li><a href="#">Dog</a></li>
+                        <li><a href="#">Cat</a></li>
                       </ul>
                     </div>
                     <div className="footer-col">
@@ -45,7 +44,6 @@ export default class Footer extends Component {
                     </div>
                   </div>
                 </div>
-                <br></br>
                 <div className="fixed-footer">
                   <div className="container">Copyright&copy; 2023 Teman Hewan</div>
                 </div>

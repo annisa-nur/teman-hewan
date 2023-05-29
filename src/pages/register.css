@@ -7,14 +7,15 @@ body
     text-decoration: none;
 }  
 .logo{
-    max-width: 166px;
-    position: static;
+    max-width: 50px;
+    position: relative;
+    z-index: 1;
     margin-top: 20px;
 }
 .dog{
     max-width: 500px;
     position: absolute;
-    margin-top: 580px;
+    margin-top: 450px;
 }
 .cat{
     max-width: 500px;
@@ -35,7 +36,7 @@ body
 }  
 .reg{  
     text-align: center;
-    font-size: 65px;
+    font-size: 40px;
     color: white;  
     padding: 0px;  
     margin: 20px;
@@ -54,6 +55,19 @@ label{
     font-size: 25px;
     width: 370px;  
     height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 8px;  
+    margin-top: 10px;
+    font-family: 'Poppins';
+}
+.kol{
+    background: rgba(125, 178, 86, 1);
+    padding: 12px;
+    color: white;
+    font-size: 20px;
+    width: 320px;  
+    height: 25px;  
     border: none;  
     border-radius: 3px;  
     padding-left: 8px;  
@@ -81,7 +95,7 @@ span{
     color: rgba(248, 241, 127, 1);
     font-size: 25px;
 }
-.footer{
+.ftr{
     font-family: 'Poppins';
     font-size: 10px;
     padding-top: 10px;

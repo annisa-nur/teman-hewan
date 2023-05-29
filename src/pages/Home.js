@@ -5,20 +5,29 @@ import Banner from "../components/Banner";
 import Services from "../components/Services";
 import FeaturedRooms from "../components/FeaturedRooms";
 import Footer from "../components/Footer";
+import Testimoni from "../components/Testimoni";
+import Mission from "../components/Mission";
+import Support from "../components/Support";
+import Navbar from "../components/Navbar";
+
 const home = () => {
   return (
     <>
+      <Navbar />
       <Hero>
         <Banner
           title="Teman Hewan"
           subtitle="Find your pet friends"
         >
-          <Link to="/rooms" className="btn-primary">
+          <Link to="/rooms/" className="btn-primary">
             browse our pets
           </Link>
         </Banner>
       </Hero>
+      <Mission />
+      <Support />
       <Services />
+      <Testimoni/>
       <FeaturedRooms />
       <Footer />
     </>

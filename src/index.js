@@ -5,6 +5,7 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { RoomProvider } from "./context";
 import { BrowserRouter } from "react-router-dom";
+import axios from '../node_modules/axios/lib/axios.js';
 
 ReactDOM.render(
   <RoomProvider>
