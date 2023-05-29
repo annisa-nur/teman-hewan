@@ -2,7 +2,8 @@ import React from "react";
 import { Component } from "react";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
-import { FaHome } from "react-icons/fa";
+import Navbar from "../components/Navbar";
+import { RoomContext } from "../context";
 // import bankm1 from "../images/bank1.png";
 // import bankm2 from "../images/bank2.png";
 // import bankm3 from "../images/bank3.png";
@@ -14,15 +15,17 @@ import { FaHome } from "react-icons/fa";
 // import ewallett4 from "../images/ewallet4.png";
 // import catt1 from "../images/cat1.jpeg";
 
-
 export default class Cart extends Component {
-  render() {
+    
+    render() {
+  
     return (
       <>
+        <Navbar />
         <section className="cart-page">
           <div className="cart-info">
             <article className="desc">
-            <Link to="/"><FaHome className="home-btn"/></Link>
+              <img url="../images/cat1.jpeg" alt="kucing"></img>
               <h3>details</h3>
               <p>Street art edison bulb gluten-free, tofu try-hard lumbersexual brooklyn tattooed pickled chambray. Actually humblebrag next level, deep v art party wolf tofu direct trade readymade sustainable hell of banjo. Organic authentic subway tile cliche palo santo, street art XOXO dreamcatcher retro sriracha portland air plant kitsch stumptown. Austin small batch squid gastropub. Pabst pug tumblr gochujang offal retro cloud bread bushwick semiotics before they sold out sartorial literally mlkshk. Vaporware hashtag vice, sartorial before they sold out pok pok health goth trust fund cray.</p>
             </article>
@@ -54,34 +57,12 @@ export default class Cart extends Component {
                       <label for="payment">Shipment:</label>
                     </div>
                     <div className="col-75">
-                      <select>
-                        <option value="">Economy - Rp 8.000/kg</option>
+                      <select value={this.state}>
+                        <option value="economy">Economy - Rp 8.000/kg</option>
                         <option value="regular">Regular - Rp 9.000/kg</option>
                         <option value="express">Express - Rp 12.000/kg</option>
                         <option value="oneday">One Day - Rp 18.000/kg</option>
                       </select>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-25">
-                      <label for="PetPrice">Pet Price:</label>
-                    </div>
-                    <div className="col-75">
-                      <div className="place-output">
-                        <output></output>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-25">
-                      <label for="TotalPrice">Total Price:</label>
-                    </div>
-                    <div className="col-75">
-                      <div className="place-output">
-                        <output></output>
-                      </div>
                     </div>
                   </div>
 
@@ -100,9 +81,6 @@ export default class Cart extends Component {
             <br></br>
             
             <div className="cart-info2">
-              <br></br>
-              <br></br>
-              <br></br>
             <h3>Payment Methods</h3>
             <div className="Rectangle-2">
               <div className="payment-container">
@@ -113,44 +91,35 @@ export default class Cart extends Component {
                           <legend>Please select your payment method:</legend>
                           <div class="grid grid-cols-2 gap-2">
                             <input type="radio" id="paymentmethods1" name="paymentmethod" />
-                            {/* <img src="../images/bank1.png" alt="mandiri"></img> */}
-                            <p>Mandiri</p>
+                            <img src="../images/bank1.png" alt="mandiri"></img>
 
                             <input type="radio" id="paymentmethods1" name="paymentmethod" />
-                            {/* <img src="../images/ewallet1.png" alt="gopay"></img> */}
-                            <p>GoPay</p>
+                            <img src="../images/ewallet1.png" alt="gopay"></img>
                           </div>
                           <div class="grid grid-cols-2 gap-2">
                             <input type="radio" id="paymentmethods1" name="paymentmethod" />
-                            {/* <img src="../images/bank2.png" alt="bca"></img> */}
-                            <p>BCA</p>
+                            <img src="../images/bank2.png" alt="bca"></img>
 
                             <input type="radio" id="paymentmethods1" name="paymentmethod" />
-                            {/* <img src="../images/ewallet2.png" alt="dana"></img> */}
-                            <p>Dana</p>
+                            <img src="../images/ewallet2.png" alt="dana"></img>
                           </div> 
                           <div class="grid grid-cols-2 gap-2">
                             <input type="radio" id="paymentmethods1" name="paymentmethod" />
-                            {/* <img src="../images/bank3.png" alt="bni"></img> */}
-                            <p>BNI</p>
+                            <img src="../images/bank3.png" alt="bni"></img>
 
                             <input type="radio" id="paymentmethods1" name="paymentmethod" />
-                            {/* <img src="../images/ewallet3.png" alt="ovo"></img> */}
-                            <p>OVO</p>
+                            <img src="../images/ewallet3.png" alt="ovo"></img>
                           </div> 
                           <div class="grid grid-cols-2 gap-2">
                             <input type="radio" id="paymentmethods1" name="paymentmethod" />
-                            {/* <img src="../images/bank4.png" alt="bri"></img> */}
-                            <p>BRI</p>
+                            <img src="../images/bank4.png" alt="bri"></img>
 
                             <input type="radio" id="paymentmethods1" name="paymentmethod" />
-                            {/* <img src="../images/ewallet4.png" alt="shopeepay"></img> */}
-                            <p>ShopeePay</p>
+                            <img src="../images/ewallet4.png" alt="shopeepay"></img>
                           </div> 
                           <div class="grid grid-cols-2 gap-2">
                             <input type="radio" id="paymentmethods1" name="paymentmethod" />
-                            {/* <img src="../images/bank5.png" alt="cimb"></img> */}
-                            <p>CIMB</p>
+                            <img src="../images/bank5.png" alt="cimb"></img>
                           </div> 
                           <br></br>
                           <div class="row">
